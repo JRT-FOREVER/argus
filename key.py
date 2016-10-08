@@ -5,7 +5,7 @@ led_pin = 24
 GPIO.setwarnings(False)
 GPIO.setmode( GPIO.BCM )
 GPIO.setup( led_pin,GPIO.OUT )
-exec="/var/www/exec.txt"
+exec="/var/www/html/exec.txt"
 while 1:
     file=open(exec,'r')
     tmp=file.read()
