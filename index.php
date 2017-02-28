@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>JRT_key</title>
-<script src="javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-<link href="javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
-<script src="javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<link href="javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JRT_key</title>
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
