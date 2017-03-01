@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+<?php require('text.php');?>
 <html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JRT_key</title>
+  <title><?php echo $header_title;?></title>
   <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
   <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen" />
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
@@ -32,21 +33,22 @@
     KEY: <input type="text" name="fname">
     <input type="submit" value="Start">
   </form>
+  <?php require('user.php');?>
+  <?php user(); ?>
   <?php $name = $_POST['fname'];
-  if($name==="robotteam") {
+  if(user($name)) {
     echo $name;
     $myfile = fopen("exec.txt", "w") or die("Unable to open file!");
     $txt = "key";
     fwrite($myfile, $txt);
     fclose($myfile);
-  //	system('./key.py');
   } else {
   	echo "error";
   } ?>
    	<div class="text-center">
    	  <a href="./elFinder-2.x/elfinder.html">帮助</a>-<a href="http://59.72.114.29">首页</a>
    	  <hr>
-   	  <div>JRT 唐敖庆B512号</div>
+   	  <div><?php echo $footer;?></div>
    	</div>
   </div>
 </div>
