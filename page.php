@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php echo $text_title;?></title>
-  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
-  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen" />
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="public/components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+  <link href="public/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+  <script src="public/components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
 <header>
