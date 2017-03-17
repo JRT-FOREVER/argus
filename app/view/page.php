@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php require('text.php');?>
 <html>
 <head>
   <meta charset="UTF-8" />
@@ -33,18 +32,7 @@
     KEY: <input type="text" name="fname">
     <input type="submit" value="Start">
   </form>
-  <?php require('user.php');?>
-  <?php user(); ?>
-  <?php $name = $_POST['fname'];
-  if(user($name)) {
-    echo $name;
-    $myfile = fopen("exec.txt", "w") or die("Unable to open file!");
-    $txt = "key";
-    fwrite($myfile, $txt);
-    fclose($myfile);
-  } else {
-  	echo "error";
-  } ?>
+  <?php echo $message ?>
    	<div class="text-center">
    	  <a href="./elFinder-2.x/elfinder.html">帮助</a>-<a href="http://59.72.114.29">首页</a>
    	  <hr>
