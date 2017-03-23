@@ -5,7 +5,18 @@ require(DIR_MODEL . 'exec.php');
 
 
 require('user.php');
+require(DIR_CONTROLLER . 'user.php');
+session_start();
+
+$user = new user();
 //user();
+//var_dump($_POST);
+if ($_POST['username'] && $_POST['password']) {
+
+  $user->login($_POST['username'], $_POST['password']);
+}
+
+
 $name = $_POST['fname'];
 if(user($name)) {
 

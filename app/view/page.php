@@ -27,6 +27,11 @@
   <div class="hidden-xs">
    <?php echo $text_today . date("Y-m-d  l") . "<br>"; ?>
   </div>
+  <?php if ($user->status()) {
+    $user->home();
+  } else { ?>
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?class=user&method=logout">退出</a>
+  <?php } ?>
   <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
     <br />
     KEY: <input type="text" name="fname">
