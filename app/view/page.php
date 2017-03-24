@@ -30,13 +30,14 @@
   <?php if ($user->status()) {
     $user->home();
   } else { ?>
-    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?class=user&method=logout">退出</a>
-  <?php } ?>
+    <div>hello <?php echo $_SESSION['user']; ?>
+    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?class=user&method=logout"><?php echo $text_logout; ?></a></div>
   <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
     <br />
     KEY: <input type="text" name="fname">
     <input type="submit" value="Start">
   </form>
+  <?php } ?>
   <?php echo $message ?>
    	<div class="text-center">
    	  <a href="./elFinder-2.x/elfinder.html">帮助</a>-<a href="http://59.72.114.29">首页</a>

@@ -6,8 +6,8 @@ require(DIR_MODEL . 'exec.php');
 
 require('user.php');
 require(DIR_CONTROLLER . 'user.php');
-session_start();
 
+//var_dump($_SESSION);
 $user = new user();
 //user();
 //var_dump($_POST);
