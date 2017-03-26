@@ -15,7 +15,7 @@ class User
     if ($_POST['username'] && $_POST['password']) {
       $_SESSION['user'] = $_POST['username'];
       //echo "login";
-      header("location: /");
+      header("location: {$_SERVER['PHP_SELF']}");
     }
 
   }
@@ -26,7 +26,7 @@ class User
     {
 
 	    unset($_SESSION['user']);
-      header("location: /");
+      header("location: {$_SERVER['PHP_SELF']}");
       /*
       echo "logout";
 
