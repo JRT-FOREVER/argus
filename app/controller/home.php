@@ -11,10 +11,7 @@ require(DIR_CONTROLLER . 'user.php');
 $user = new user();
 //user();
 //var_dump($_POST);
-if ($_POST['username'] && $_POST['password']) {
 
-  $user->login($_POST['username'], $_POST['password']);
-}
 
 
 $name = $_POST['fname'];

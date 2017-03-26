@@ -1,4 +1,4 @@
-			<form class="form-horizontal" role="form" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+			<form class="form-horizontal" role="form" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>?class=user&method=login">
 				<div class="form-group">
 					 <label for="username" class="col-sm-2 control-label">Username</label>
 					<div class="col-sm-10">
