@@ -1,4 +1,5 @@
-# argus
+argus
+=====
 
 use raspberry PI as base build wifi opendoor system
 
@@ -11,7 +12,8 @@ use raspberry PI as base build wifi opendoor system
 ***
 
 ## RUN dependence
-    sudo apt install apache2 php5
+    sudo apt-get install apache2 php5 libapache2-mod-php5 \
+    python3 python3-rpi.gpio
 
 
 >defaults run path /var/www/html
@@ -31,7 +33,6 @@ use raspberry PI as base build wifi opendoor system
 
 
 ### raspbian install bower
-
 
     sudo apt update && apt install npm
     sudo npm install -g bower
