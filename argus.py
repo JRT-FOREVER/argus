@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 
-from bottle import route, run, template, request
 import sys, logging
+from bottle import route, run, template, request
 
 from lib.argus import Executor, Frequency, Checker
 
 import config
 
-print(config.name)
 
 ex = Executor(config.actions)
 user = Checker(config.users)
@@ -18,14 +17,6 @@ f = Frequency()
 @route('/')
 def index():
     return template('argus', name='argus', target='/action/' + config.default_action)
-
-@route('/token/<name>')
-def index(name):
-    return check_token(name)
-
-@route('/login/<user>/<passwd>')
-def index(user, passwd):
-    return executor()
 
 #@post('/login') # or @route('/login', method='POST')
 @route('/action/<action>', method='POST')
