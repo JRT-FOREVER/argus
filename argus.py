@@ -10,14 +10,14 @@ import config
 
 print(config.name)
 
+ex = Executor(config.actions)
 user = Checker(config.users)
 f = Frequency()
 
 
 @route('/')
 def index():
-		return template('argus', name='argus', target='/hello/2333333')
-    #return '<b>Hello llllllllllllllll</b>!'
+    return template('argus', name='argus', target='/action/' + config.default_action)
 
 @route('/token/<name>')
 def index(name):
@@ -28,14 +28,15 @@ def index(user, passwd):
     return executor()
 
 #@post('/login') # or @route('/login', method='POST')
-@route('/login', method='POST')
-def do_login():
+@route('/action/<action>', method='POST')
+def do_login(action):
     ip = request.get('REMOTE_ADDR')
     if not f.limit(ip):
         status, u = user.check(request.forms.get('username'), request.forms.get('password'))
 
         if status:
             f.clear(ip)
+            ex.execute(action)
             return "<p>Your login information was correct.</p>"
         else:
             return "<p>Login failed.</p>"

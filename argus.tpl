@@ -9,7 +9,7 @@
   <body>
     <main>
       <div class="card">
-        <form class="form" action="/login" method="post">
+        <form class="form" action="{{ target }}" method="post">
 
           <h1>Login
             <span>Please Input Username and Password</span>

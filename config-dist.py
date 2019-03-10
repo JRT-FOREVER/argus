@@ -1,20 +1,22 @@
 name = "argus"
-#action = "./argus.sh"
-actions = ''
-# aciton:
-# init_action
-# before_action
-# after_action
-# del_action
+default_action = 'test_exec'
 
-# alarm_action
+# hook aciton:
+#     init_action : App start run
+#     before_action : Action run before run
+#     after_action : Action run after run
+#     del_action : App stop run
 
-tokens = [
-  # echo 233 | md5sum
-  "9f3d9739b11c2a4b08ea48512ac467f6",
-  # echo 456 | md5sum
-  "d2d362cdc6579390f1c0617d74a7913d"
-]
+# alarm_action : Run this aciton. not run before_action && after_action
+
+actions = {
+    # 'init_action': 'echo -n init_action > init_action',
+    # 'before_action': 'echo -n before_action > before_action',
+    'test_exec': 'echo ++++++++++++++++++++++++++',
+    # 'after_action': 'echo -n after_action > after_action',
+    # 'del_action': 'echo -n del_action > del_action',
+    'alarm_action': 'echo AAAAAAAAAAAAAAAAAAAAA'}
+
 
 users = [
   { 'user': 'admin', 'pass_text': 'admin'},
