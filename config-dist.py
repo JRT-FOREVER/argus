@@ -1,5 +1,6 @@
 name = 'argus'
-default_action = 'test_exec'
+#default_action = 'test_exec'
+default_action = 'run'
 
 # hook aciton:
 #     init_action : App start run
@@ -12,10 +13,13 @@ default_action = 'test_exec'
 
 actions = {
     # 'init_action': 'echo -n init_action > init_action',
+    'init_action': 'sh scripts/init.sh',
     # 'before_action': 'echo -n before_action > before_action',
-    'test_exec': 'echo ++++++++++++++++++++++++++',
+    #'test_exec': 'echo ++++++++++++++++++++++++++',
+    'run': 'sh scripts/run.sh',
     # 'after_action': 'echo -n after_action > after_action',
     # 'del_action': 'echo -n del_action > del_action',
+    'del_action': 'sh scripts/del.sh',
     'alarm_action': 'echo AAAAAAAAAAAAAAAAAAAAA'}
 
 
