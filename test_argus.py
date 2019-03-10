@@ -41,8 +41,10 @@ class TestExecutor(unittest.TestCase):
         e = Executor(actions)
         e.execute('exec_action')
 
+        # Run e.__del__()
+        del e
+
         for a in actions.keys():
-            #print(a)
             #a = 'init_action'
             with open(a, 'r') as f:
                 self.assertEqual(f.read(), a)
