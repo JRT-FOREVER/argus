@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 
-from bottle import route, run, template
+from bottle import route, run, template, request
 import sys, logging
 
 import config
@@ -73,6 +73,11 @@ class Checker():
             return False, {}
 
 
+
+user = Checker(config.users)
+f = Frequency()
+
+
 @route('/')
 def index():
 		return template('argus', name='argus', target='/hello/2333333')
@@ -87,27 +92,21 @@ def index(user, passwd):
     return executor()
 
 #@post('/login') # or @route('/login', method='POST')
-#def do_login():
-#    username = request.forms.get('username')
-#    password = request.forms.get('password')
-#    if check_login(username, password):
-#        return "<p>Your login information was correct.</p>"
-#    else:
-#        return "<p>Login failed.</p>"
+@route('/login', method='POST')
+def do_login():
+    ip = request.get('REMOTE_ADDR')
+    if not f.limit(ip):
+        status, u = user.check(request.forms.get('username'), request.forms.get('password'))
 
-#@route('/my_ip')
-#def show_ip():
-#    ip = request.environ.get('REMOTE_ADDR')
-#    # or ip = request.get('REMOTE_ADDR')
-#    # or ip = request['REMOTE_ADDR']
-#    return template("Your IP is: {{ip}}", ip=ip)
-
-#check_token('23333')
-#check_token("9f3d9739b11c2a4b08ea48512ac467f6")
+        if status:
+            f.clear(ip)
+            return "<p>Your login information was correct.</p>"
+    else:
+        return "<p>Login failed.</p>"
 
 if __name__ == '__main__':
     logging.basicConfig(stream=sys.stdout, level=logging.DEBUG, format='%(asctime)s %(levelname)s -- : %(message)s')
     logging.info('=== Start ' + config.name + ' ===')
     logging.debug('This message should go to the log file')
-    #run(host='localhost', port=8080, reloader=True)
+    run(host='localhost', port=8080, reloader=True)
 
