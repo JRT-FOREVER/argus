@@ -36,12 +36,13 @@ def do_login(action):
 
         if status:
             f.clear(ip)
-            ex.execute(action)
+            ex.run(action)
             return "<p>Your login information was correct.</p>"
         else:
             return "<p>Login failed.</p>"
 
     else:
+        ex.execute('alarm_action')
         return "<p>Login failed.</p>"
 
 if __name__ == '__main__':

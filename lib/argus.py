@@ -3,19 +3,22 @@ import os
 class Executor():
     def __init__(self, actions=[]):
         self.actions = actions
-        self.__exec(self.actions['init_action']) if 'init_action' in self.actions else None
+        self.execute('init_action')
+
+    def run(self, action):
+        self.execute('before_action')
+        tmp = self.execute(action)
+        self.execute('after_action')
+        return tmp
 
     def execute(self, action):
-        self.__exec(self.actions['before_action']) if 'before_action' in self.actions else None
-        tmp = self.__exec(self.actions[action])
-        self.__exec(self.actions['after_action']) if 'after_action' in self.actions else None
-        return tmp
+        return self.__exec(self.actions[action]) if action in self.actions else False
 
     def __exec(self, cmd):
         return os.system(cmd)
 
     def __del__(self):
-        self.__exec(self.actions['del_action']) if 'del_action' in self.actions else None
+        self.execute('del_action')
 
 class Frequency():
     def __init__(self, fail=3, mix_cache=10):

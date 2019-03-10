@@ -39,7 +39,7 @@ class TestExecutor(unittest.TestCase):
           'del_action': 'echo -n del_action > del_action'}
 
         e = Executor(actions)
-        e.execute('exec_action')
+        e.run('exec_action')
 
         # Run e.__del__()
         del e
