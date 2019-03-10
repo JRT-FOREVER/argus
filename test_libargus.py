@@ -1,8 +1,7 @@
 import unittest
 
-#import argus
-from argus import *
-import os
+#from argus import *
+from lib.argus import Executor, Frequency, Checker
 
 class TestFrequency(unittest.TestCase):
     def test_limit(self):
@@ -29,6 +28,7 @@ class TestFrequency(unittest.TestCase):
         self.assertEqual(len(f.cache), 0)
         #print(f.cache)
 
+import os
 class TestExecutor(unittest.TestCase):
     def test_init(self):
         actions = {
