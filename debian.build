@@ -1,0 +1,25 @@
+cat > Makefile << EOF
+
+install :
+        mkdir -p /usr/lib/argus
+        install -m755 argus.py /usr/lib/argus/argus.py
+        install -m755 config-dist.py /usr/lib/argus/config.py
+        install -m755 argus.tpl /usr/lib/argus/argus.tpl
+        install -m755 argus.service /lib/systemd/system/argus.service
+        cp -r lib scripts /usr/lib/argus/
+
+EOF
+
+
+checkinstall --install=no \
+--nodoc \
+--pkgname=argus \
+--pkggroup=python3 \
+--pkgversion=3.0 \
+--pkgarch=all \
+--pkgrelease=1 \
+--pkglicense=MIT \
+--requires="python3, python3-bottle"
+
+rm Makefile
+
