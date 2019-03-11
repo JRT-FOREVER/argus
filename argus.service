@@ -1,0 +1,10 @@
+[Unit]
+Description=Argus Service
+
+[Service]
+Type=simple
+WorkingDirectory=/usr/lib/argus
+ExecStart=/usr/bin/python3 argus.py
+
+[Install]
+WantedBy=multi-user.target
