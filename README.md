@@ -11,6 +11,10 @@ A.R.G.U.S.
 
 use raspberry PI as base build wifi opendoor system
 
+#### For archlinux
+AUR https://aur.archlinux.org/argus.git
+
+
 ## RUN dependence
 
 **Need python 3.x**
