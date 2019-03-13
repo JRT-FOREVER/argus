@@ -2,7 +2,7 @@
 #-*- coding: utf-8 -*-
 
 import sys, logging
-from bottle import route, run, template, request
+from bottle import get, post, run, template, request, redirect, static_file
 
 from lib.argus import Executor, Frequency, Checker
 
@@ -14,12 +14,16 @@ user = Checker(config.users)
 f = Frequency()
 
 
-@route('/')
+@get('/')
 def index():
-    return template('argus', name='argus', target='/action/' + config.default_action)
+    return template('lib/argus', name='argus', target='/action/' + config.default_action)
+
+@get('/assets/<filename>')
+def server_static(filename):
+    return static_file(filename, root='public')
 
 #@post('/login') # or @route('/login', method='POST')
-@route('/action/<action>', method='POST')
+@post('/action/<action>')
 def do_login(action):
     ip = request.get('REMOTE_ADDR')
     if not f.limit(ip):
@@ -28,7 +32,7 @@ def do_login(action):
         if status:
             f.clear(ip)
             ex.run(action)
-            return "<p>Your login information was correct.</p>"
+            redirect("/")
         else:
             return "<p>Login failed.</p>"
 
@@ -40,6 +44,6 @@ if __name__ == '__main__':
     logging.basicConfig(stream=sys.stdout, level=logging.DEBUG, format='%(asctime)s %(levelname)s -- : %(message)s')
     logging.info('=== Start ' + config.name + ' ===')
     logging.debug('This message should go to the log file')
-    #run(host='localhost', port=8080, reloader=True)
-    run(host='0.0.0.0', port=8080)
+    run(host='localhost', port=8080, reloader=True)
+    #run(host='0.0.0.0', port=8080)
 
