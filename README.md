@@ -1,8 +1,8 @@
 
-<center>
-  <img src="images/argus_logo.jpg" alt="argus" width="200">
-</center>
-
+<h1 align="center">
+  <img src="images/argus_logo.jpg" alt="argus_logo" width="200">
+  <br>A.R.G.U.S.<br>
+</h1>
 
 A.R.G.U.S.
 =====
@@ -51,8 +51,6 @@ curl -X POST -F username=test -F password=test http://localhost:8080/action/run
 **Need in group gpio or root run**
 
 Default pi on gpio Group
-
-
 
 
 #### About hardware
