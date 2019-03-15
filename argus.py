@@ -44,6 +44,9 @@ if __name__ == '__main__':
     logging.basicConfig(stream=sys.stdout, level=logging.DEBUG, format='%(asctime)s %(levelname)s -- : %(message)s')
     logging.info('=== Start ' + config.name + ' ===')
     logging.debug('This message should go to the log file')
-    run(host='localhost', port=8080, reloader=True)
-    #run(host='0.0.0.0', port=8080)
+    #run(host=config.host, port=config.port, reloader=True)
+    run(host=config.host, port=config.port)
+
+    # Need gunicorn
+    #run(host=config.host, port=config.port, server='gunicorn', workers=1)
 

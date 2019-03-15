@@ -1,4 +1,7 @@
 name = 'argus'
+host = '0.0.0.0'
+port = 8033
+
 #default_action = 'test_exec'
 default_action = 'run'
 
