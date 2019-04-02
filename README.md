@@ -4,6 +4,8 @@
   <br>A.R.G.U.S.<br>
 </h1>
 
+![Argus_active](https://a-wing.top/assets/img/hey_siri_open_door/argus.webp)
+
 A.R.G.U.S.
 =====
 
@@ -58,6 +60,8 @@ systemctl enable argus.service
 ## test
 open your browser on localhost:8033
 
+![Argus_login](https://a-wing.top/assets/img/hey_siri_open_door/argus_login.png)
+
 Or
 
 ```sh
@@ -67,6 +71,8 @@ curl -X POST -F username=test -F password=test http://localhost:8033/action/run
 **Need in group gpio or root run**
 
 Default pi on gpio Group
+
+#### Development notes(Chinese) https://a-wing.top/diy/2019/03/15/hey_siri_open_door.html
 
 
 #### About hardware
