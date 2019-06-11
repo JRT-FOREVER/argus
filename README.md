@@ -80,10 +80,10 @@ Default pi on gpio Group
 - You need a raspberry PI
 
 - Driver:
-https://detail.tmall.com/item.htm?id=527306863255&spm=a1z09.2.0.0.735a2e8dUUCZCD&_u=e1nuof5e644f
+https://detail.tmall.com/item.htm?id=527306863255
 
 - Motor:
-https://detail.tmall.com/item.htm?id=42895138394&spm=a1z09.2.0.0.67002e8d7vkqM0&_u=e1nuof5ec235
+https://detail.tmall.com/item.htm?id=42895138394
 
 ![wiring_diagram](images/wiring_diagram.jpg)
 
